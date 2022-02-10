@@ -67,26 +67,26 @@
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
     
-    import { getDatabase } from "firebase/database";
 
-const database = getDatabase();
+
+
+FirebaseDatabase.getInstance().getReference().child("ABC").child("def").setValue("123");
+
+    
+
+
+
+
+
+
 
 
     
 
 
 
-
-
-
-
-
     
-        var messagesRef = firebase.database()
 
-            .ref('Collected Data');
-    
-    saveMessage(name, email);
 
            
 
@@ -102,21 +102,21 @@ const database = getDatabase();
 
  
 
-        // Save message to firebase
 
-        function saveMessage(name, email) {
+
+
 
           
 
-            saveMessageRef.set({
+          
 
-                name: "name",
+               
 
-                email: "email",
+               
 
-            });
+           
 
-           } 
+          
 
             
 
@@ -125,16 +125,16 @@ const database = getDatabase();
                
     
     
-    function ledOn(){
-      firebase.database().ref("LED").set({
-       status:"ON"
-        })
-      }
-    function ledOff(){
-      firebase.database().ref("LED").set({
-       status:"OFF"
-        })
-     }
+   // function ledOn(){
+     // firebase.database().ref("LED").set({
+     //  status:"ON"
+     //   })
+     // }
+   // function ledOff(){
+     // firebase.database().ref("LED").set({
+     //  status:"OFF"
+      //  })
+    // }
     
     
     </script>
