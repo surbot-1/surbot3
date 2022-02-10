@@ -86,9 +86,37 @@ const database = getDatabase();
 
             .ref('Collected Data');
     
-    function saveMessage(name, email) {
+    saveMessage(name, email);
 
-            
+           
+
+        
+ 
+
+
+
+
+
+
+
+
+ 
+
+        // Save message to firebase
+
+        function saveMessage(name, email) {
+
+          
+
+            saveMessageRef.set({
+
+                name: "name",
+
+                email: "email",
+
+            });
+
+           } 
 
             
 
