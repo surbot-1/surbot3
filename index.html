@@ -56,6 +56,12 @@
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
     
+    import { getDatabase } from "firebase/database";
+
+const database = getDatabase();
+
+    import { getDatabase, ref, set } from "firebase/database";
+    
     
     function ledOn(){
       firebase.database().ref("LED").set({
