@@ -62,15 +62,15 @@
   appId: "1:702504911981:web:6d1fea970a851c7ff3ab64"
 };
 
-    
+    firebase.initializeApp(firebaseConfig);
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+//const app = initializeApp(firebaseConfig);
     
 
 
 
-FirebaseDatabase.getInstance().getReference().child("ABC").child("def").setValue("123");
+firebaseDatabase.getInstance().getReference().child("ABC").child("def").setValue("123");
 
     
 
@@ -112,7 +112,7 @@ FirebaseDatabase.getInstance().getReference().child("ABC").child("def").setValue
 
                
 
-               
+              
 
            
 
@@ -123,19 +123,19 @@ FirebaseDatabase.getInstance().getReference().child("ABC").child("def").setValue
           
 
                
+    /*
     
-    
-   // function ledOn(){
-     // firebase.database().ref("LED").set({
-     //  status:"ON"
-     //   })
-     // }
-   // function ledOff(){
-     // firebase.database().ref("LED").set({
-     //  status:"OFF"
-      //  })
-    // }
-    
+    function ledOn(){
+      firebase.database().ref("LED").set({
+       status:"ON"
+        })
+      }
+    function ledOff(){
+      firebase.database().ref("LED").set({
+       status:"OFF"
+        })
+     }
+    */
     
     </script>
   
