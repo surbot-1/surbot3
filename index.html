@@ -116,14 +116,16 @@
 
        function ledOn(){
           firebase.database().ref("LED").set({
-           status:"Status: ON"
+           status:"Status:ON",
+           date: "Date:"+ Date()
            });
           takeSnapshot();
           }
     
        function ledOff(){
           firebase.database().ref("LED").set({
-           status:"Status: OFF"
+           status:"Status:-OFF",
+           date: "Date:"+ Date() 
            });
           takeSnapshot();
           }
@@ -144,7 +146,7 @@
                var ledRef = firebase.database().ref("LED"); 
                ledRef.on("value", function(snapshot) {
                document.getElementById("root").innerHTML = "";
-               document.getElementById("root").innerHTML += Date();
+               // document.getElementById("root").innerHTML += Date();
                snapshot.forEach(function(element) {
                document.querySelector('#root').innerHTML +=`
                <div>${element.val()}</div>
