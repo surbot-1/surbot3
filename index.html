@@ -144,15 +144,16 @@
                var ledRef = firebase.database().ref("LED"); 
                ledRef.on("value", function(snapshot) {
                document.getElementById("root").innerHTML = "";
+               document.getElementById("root").innerHTML += Date();
                snapshot.forEach(function(element) {
                document.querySelector('#root').innerHTML +=`
                <div>${element.val()}</div>
                `
-                }); document.getElementById("root").innerHTML += "-" + Date();
+                }); 
                });
               }
 
-               document.getElementById("root").innerHTML += "-" + Date();
+              // document.getElementById("root").innerHTML += Date();
 
 
 
