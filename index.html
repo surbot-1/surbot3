@@ -107,7 +107,7 @@
           }
     
        /*
-        var ref1 = firebase.database().ref("Message"); 
+        var ref1 = firebase.database().ref("LED"); 
                ref1.on("value", function(snapshot) {
                snapshot.forEach(function(element) {
                document.querySelector('#root').innerHTML +=`
@@ -118,7 +118,7 @@
          */
     
         function Status(){
-               var ref1 = firebase.database().ref("Message"); 
+               var ref1 = firebase.database().ref("LED"); 
                ref1.on("value", function(snapshot) {
                snapshot.forEach(function(element) {
                document.querySelector('#root').innerHTML +=
