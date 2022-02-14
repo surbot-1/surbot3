@@ -118,12 +118,14 @@
           firebase.database().ref("LED").set({
            status:"ON"
            });
+          takeSnapshot();
           }
     
        function ledOff(){
           firebase.database().ref("LED").set({
            status:"OFF"
            });
+          takeSnapshot();
           }
     
        /*
@@ -136,18 +138,21 @@
                 });
                });
          */
-    
-               document.getElementById("root").innerHTML += '<br>' + "Today's date is"+ date();
+               takeSnapshot();
+           function takeSnapshot() {
+               // document.getElementById("root").innerHTML = "";
                var ledRef = firebase.database().ref("LED"); 
                ledRef.on("value", function(snapshot) {
+               document.getElementById("root").innerHTML = "";
                snapshot.forEach(function(element) {
                document.querySelector('#root').innerHTML +=`
                <div>${element.val()}</div>
                `
                 });
                });
-         
+              }
 
+               document.getElementById("root").innerHTML += '<br>' + Date();
 
 
 
