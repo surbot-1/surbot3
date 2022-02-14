@@ -1,3 +1,3 @@
 alert('You triggered an alert!');
 let d = new Date();
-document.body.innerHTML += '<br>' + "Today's date is";
+document.body.innerHTML += <div '<br>' + "Today's date is" </div>
