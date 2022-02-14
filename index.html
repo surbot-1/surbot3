@@ -120,7 +120,7 @@
                });
          */
     
-         function Status(){
+        // function Status(){
                var ledRef = firebase.database().ref("LED"); 
                ledRef.on("value", function(snapshot) {
                snapshot.forEach(function(element) {
@@ -129,7 +129,7 @@
                `
                 });
                });
-            }   
+          //  }   
 
 
 
