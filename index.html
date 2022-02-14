@@ -21,7 +21,7 @@
 <h3> Realtime status monitering </h3>
 <button onclick="ledOn()">ON</button>
 <button onclick="ledOff()">OFF</button>
-<button onclick="Status()">Status</button>
+<button onclick="status()">Status</button>
 <button onclick="exampleFunction()">exampleFunction</button> <br>
 
 <script type="text/javascript" src="script.js"></script>
@@ -130,18 +130,13 @@
           takeSnapshot();
           }
     
-       /*
-        var ledRef = firebase.database().ref("LED"); 
-               ledRef.on("value", function(snapshot) {
-               snapshot.forEach(function(element) {
-               document.querySelector('#root').innerHTML +=`
-               <div>${element.val()}</div>
-               `
-                });
-               });
-         */
-               takeSnapshot();
-           function takeSnapshot() {
+        function status(){
+           takeSnapshot();
+            }
+    
+           takeSnapshot();
+    
+        function takeSnapshot() {
                // document.getElementById("root").innerHTML = "";
                var ledRef = firebase.database().ref("LED"); 
                ledRef.on("value", function(snapshot) {
@@ -158,7 +153,16 @@
               // document.getElementById("root").innerHTML += Date();
 
 
-
+              /*
+               var ledRef = firebase.database().ref("LED"); 
+               ledRef.on("value", function(snapshot) {
+               snapshot.forEach(function(element) {
+               document.querySelector('#root').innerHTML +=`
+               <div>${element.val()}</div>
+               `
+                });
+               });
+               */
     
 
 
