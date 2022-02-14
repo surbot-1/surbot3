@@ -116,16 +116,16 @@
 
        function ledOn(){
           firebase.database().ref("LED").set({
-           status:"Status:ON",
-           date: "Date:"+ Date()
+           status:"Status: ON",
+           date: "Date: "+ Date()
            });
           takeSnapshot();
           }
     
        function ledOff(){
           firebase.database().ref("LED").set({
-           status:"Status:-OFF",
-           date: "Date:"+ Date() 
+           status:"Status: OFF",
+           date: "Date: "+ Date() 
            });
           takeSnapshot();
           }
