@@ -1,3 +1,3 @@
 alert('Alert 2!');
 let d = new Date();
-document.body.innerHTML += '<br>' + "Today's date is"+ d;
+document.getElementById("root2").innerHTML += '<br>' + "Today's date is"+ d;
