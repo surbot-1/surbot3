@@ -121,9 +121,9 @@
                var ref1 = firebase.database().ref("LED"); 
                ref1.on("value", function(snapshot) {
                snapshot.forEach(function(element) {
-               document.querySelector('#root').innerHTML +=
+               document.querySelector('#root').innerHTML +=`
                <div>${element.val()}</div>
-               
+               `
                 });
                });
             }   */
