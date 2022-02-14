@@ -97,13 +97,13 @@
        function ledOn(){
           firebase.database().ref("LED").set({
            status:"ON"
-           })
+           });
           }
     
        function ledOn(){
           firebase.database().ref("LED").set({
            status:"OFF"
-           })
+           });
           }
     
        /*
@@ -114,7 +114,7 @@
                <div>${element.val()}</div>
                `
                 });
-               })
+               });
          */
     
          function Status(){
@@ -125,7 +125,7 @@
                <div>${element.val()}</div>
                `
                 });
-               })
+               });
             }   
 
 
@@ -178,12 +178,12 @@
     function ledOn(){
       firebase.database().ref("LED").set({
        status:"ON"
-        })
+        });
       }
     function ledOff(){
       firebase.database().ref("LED").set({
        status:"OFF"
-        })
+        });
      }
     */
     
