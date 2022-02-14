@@ -14,7 +14,7 @@
   
 <body>
   
-
+  <button onclick="Status()">Status</button>
 
 
 
@@ -35,7 +35,7 @@
 
 
 
-   <div id="root"</div>
+  <div id="root"</div>
   
   
   <script src=
@@ -92,22 +92,41 @@
 
 
 
-  //  FirebaseDatabase.getInstance().getReference().child("ABC").child("def").setValue("123");
 
-    /*
-     firebase.database().ref("LED").set({
-       status:"ON"
-        })
-    */
+
+       function ledOn(){
+          firebase.database().ref("LED").set({
+           status:"ON"
+           });
+          }
     
-    /*
-     firebase.database().ref("LED").set({
-       status:"OFF"
-        })
-     */
-       
-
-
+       function ledOn(){
+          firebase.database().ref("LED").set({
+           status:"OFF"
+           });
+          }
+    
+       /*
+        var ref1 = firebase.database().ref("Message"); 
+               ref1.on("value", function(snapshot) {
+               snapshot.forEach(function(element) {
+               document.querySelector('#root').innerHTML +=`
+               <div>${element.val()}</div>
+               `
+                });
+               });
+         */
+    
+        function Status(){
+               var ref1 = firebase.database().ref("Message"); 
+               ref1.on("value", function(snapshot) {
+               snapshot.forEach(function(element) {
+               document.querySelector('#root').innerHTML +=
+               <div>${element.val()}</div>
+               
+                });
+               });
+              }
 
 
 
@@ -155,18 +174,18 @@
 
                
     
-    
+    /*
     function ledOn(){
       firebase.database().ref("LED").set({
        status:"ON"
-        })
+        });
       }
     function ledOff(){
       firebase.database().ref("LED").set({
        status:"OFF"
-        })
+        });
      }
-    
+    */
     
     
     </script>
