@@ -170,9 +170,12 @@
               // var led = snapshot.child("LED").val();
               var ledStatus = snapshot.child("status").val();
               var ledDate = snapshot.child("date").val();
+                document.querySelector('#root').innerHTML +=`
+               <div>${status.val()}</div>
+               `
                 });
               document.getElementById("root").innerHTML += "Abc";
-              document.getElementById("root").innerHTML += "Status: "+ ledStatus + " :" + ledDate;
+            //  document.getElementById("root").innerHTML += "Status: "+ ledStatus + " :" + ledDate;
               }
     
 
