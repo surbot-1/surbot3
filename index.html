@@ -167,14 +167,14 @@
        function takeSnapshot() {
               var ledRef = firebase.database().ref("LED").child("status");
               ledRef.on("value", function(snapshot) {
-              var ledStatus = snapshot.value();
+              var ledStatus = snapshot.val();
                 });
               var ledRef = firebase.database().ref("LED").child("date");
               ledRef.on("value", function(snapshot) {
-              var ledDate = snapshot.value();
+              var ledDate = snapshot.val();
                 });
-              document.getElementById("root").innerHTML = "";
-              document.getElementById("root").innerHTML += "Status: "+ ledStatus + " :" + ledDate;
+              document.getElementById("root").innerHTML = "Abc";
+              // document.getElementById("root").innerHTML += "Status: "+ ledStatus + " :" + ledDate;
               }
     
 
