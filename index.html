@@ -165,15 +165,13 @@
                */
     
        function takeSnapshot() {
-              var ledRef = firebase.database().ref("LED").child("status");
+              var ledRef = firebase.database().ref("LED");
               ledRef.on("value", function(snapshot) {
-              var ledStatus = snapshot.val();
+              var led = snapshotchild("LED").val();
+              var ledStatus = snapshotchild("LED/status").val();
+              var ledDate = snapshotchild("LED/date").val();
                 });
-              var ledRef = firebase.database().ref("LED").child("date");
-              ledRef.on("value", function(snapshot) {
-              var ledDate = snapshot.val();
-                });
-              document.getElementById("root").innerHTML = "Abc";
+              document.getElementById("root").innerHTML += "Abc";
               document.getElementById("root").innerHTML += "Status: "+ ledStatus + " :" + ledDate;
               }
     
