@@ -157,7 +157,23 @@
             }
     
            takeSnapshot();
-        /*
+        
+       function takeSnapshot() {
+              var ledRef = firebase.database().ref("LED");
+              ledRef.on("value", function(snapshot) {
+              // var led = snapshot.val();
+              var ledStatus = snapshot.child("status").val();
+              var ledDate = snapshot.child("date").val();
+              document.getElementById("root").innerHTML = "";
+              // document.getElementById("root").innerHTML += '<br>' + led ;
+              document.getElementById("root").innerHTML += '<br>' + "Date: " + ledDate ;
+              document.getElementById("root").innerHTML += '<br>' + "Status: " + ledStatus ;
+               });
+              }
+               
+               
+
+      /*
         function takeSnapshot() {
                // document.getElementById("root").innerHTML = "";
                var ledRef = firebase.database().ref("LED"); 
@@ -172,10 +188,8 @@
                });
               }
               */
-              
-
-
-              /*
+    
+               /*
                var ledRef = firebase.database().ref("LED"); 
                ledRef.on("value", function(snapshot) {
                snapshot.forEach(function(element) {
@@ -186,60 +200,6 @@
                });
                */
     
-       function takeSnapshot() {
-              var ledRef = firebase.database().ref("LED");
-              ledRef.on("value", function(snapshot) {
-              // var led = snapshot.val();
-              var ledStatus = snapshot.child("status").val();
-              var ledDate = snapshot.child("date").val();
-              document.getElementById("root").innerHTML = "";
-              // document.getElementById("root").innerHTML += '<br>' + led ;
-              document.getElementById("root").innerHTML += "Date: " + ledDate ;
-              document.getElementById("root").innerHTML += '<br>' + "Status: " + ledStatus ;
-               });
-              }
-               
-           
-    
-              
-    
-
-
-           
-
-        
- 
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-          
-
-          
-
-               
-
-              
-
-           
-
-          
-
-            
-
-          
-
-               
     
     /*
     function ledOn(){
