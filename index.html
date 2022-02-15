@@ -167,18 +167,18 @@
        function takeSnapshot() {
               var ledRef = firebase.database().ref("LED");
               ledRef.on("value", function(snapshot) {
-              // var led = snapshot.child("LED").val();
+              var led = snapshot.child("LED").val();
               var ledStatus = snapshot.child("status").val();
               var ledDate = snapshot.child("date").val();
-                document.querySelector('#root').innerHTML +=`
-               <div>${ledStatus}</div>
-               `
-              document.getElementById("root").innerHTML += ledDate ;
-              alert('Alert 3!');
+              document.getElementById("root").innerHTML = "";
+              document.getElementById("root").innerHTML += '<br>' + led ;
+              document.getElementById("root").innerHTML += '<br>'+ "Status: " + ledStatus ;
+              document.getElementById("root").innerHTML += " Date: " + ledStatus ;
+              alert('Alert 5!');
                 });
-              document.getElementById("root").innerHTML += "Abc";
-              document.getElementById("root").innerHTML += ledDate ;
-              alert('Alert 4!');
+              //  document.getElementById("root").innerHTML += "Abc";
+              // document.getElementById("root").innerHTML += ledDate ;
+              alert('Alert 6!');
               }
     
 
