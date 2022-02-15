@@ -116,16 +116,16 @@
 
        function ledOn(){
           firebase.database().ref("LED").set({
-           status:"Status: ON",
-           date: "Date: " + Date()
+           status: "ON",
+           date: Date()
            });
           takeSnapshot();
           }
     
        function ledOff(){
           firebase.database().ref("LED").set({
-           status:"Status: OFF",
-           date: "Date: " + Date() 
+           status: "OFF",
+           date: Date() 
            });
           takeSnapshot();
           }
@@ -167,13 +167,13 @@
        function takeSnapshot() {
               var ledRef = firebase.database().ref("LED");
               ledRef.on("value", function(snapshot) {
-              var led = snapshot.child("LED").val();
+              var led = snapshot.ledRef.val();
               var ledStatus = snapshot.child("status").val();
               var ledDate = snapshot.child("date").val();
               document.getElementById("root").innerHTML = "";
               document.getElementById("root").innerHTML += '<br>' + led ;
               document.getElementById("root").innerHTML += '<br>'+ "Status: " + ledStatus ;
-              document.getElementById("root").innerHTML += " Date: " + ledStatus ;
+              document.getElementById("root").innerHTML += " Date: " + ledDate;
               alert('Alert 5!');
                 });
               //  document.getElementById("root").innerHTML += "Abc";
