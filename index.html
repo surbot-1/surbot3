@@ -167,9 +167,9 @@
        function takeSnapshot() {
               var ledRef = firebase.database().ref("LED");
               ledRef.on("value", function(snapshot) {
-              var led = snapshot.child("LED").val();
-              var ledStatus = snapshot.child("LED/status").val();
-              var ledDate = snapshot.child("LED/date").val();
+              // var led = snapshot.child("LED").val();
+              var ledStatus = snapshot.child("status").val();
+              var ledDate = snapshot.child("date").val();
                 });
               document.getElementById("root").innerHTML += "Abc";
               document.getElementById("root").innerHTML += "Status: "+ ledStatus + " :" + ledDate;
