@@ -135,7 +135,7 @@
             }
     
            takeSnapshot();
-    
+        /*
         function takeSnapshot() {
                // document.getElementById("root").innerHTML = "";
                var ledRef = firebase.database().ref("LED"); 
@@ -149,8 +149,8 @@
                 }); 
                });
               }
-
-              // document.getElementById("root").innerHTML += Date();
+              */
+              
 
 
               /*
@@ -164,9 +164,18 @@
                });
                */
     
-
-
-
+       function takeSnapshot() {
+              var ledRef = firebase.database().ref("LED").child("status");
+              ledRef.on("value", function(snapshot) {
+              var ledStatus = snapshot.value();
+                });
+              var ledRef = firebase.database().ref("LED").child("date");
+              ledRef.on("value", function(snapshot) {
+              var ledDate = snapshot.value();
+                });
+              document.getElementById("root").innerHTML = "";
+              document.getElementById("root").innerHTML += "Status: "+ ledStatus + " :" + ledDate;
+              }
     
 
 
