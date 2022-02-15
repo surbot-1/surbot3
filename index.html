@@ -168,16 +168,16 @@
               var ledRef = firebase.database().ref("LED");
               ledRef.on("value", function(snapshot) {
               // var led = snapshot.child("LED").val();
-              var ledStatus = snapshot.child("LED/status").val();
-              var ledDate = snapshot.child("LED/date").val();
+              var ledStatus = snapshot.child("status").val();
+              var ledDate = snapshot.child("date").val();
                 document.querySelector('#root').innerHTML +=`
                <div>${ledStatus}</div>
                `
-              alert('Alert 4!');
+              alert('Alert 6!');
                 });
               document.getElementById("root").innerHTML += "Abc";
               document.getElementById("root").innerHTML += ledStatus ;
-              alert('Alert 5!');
+              alert('Alert 7!');
               }
     
 
